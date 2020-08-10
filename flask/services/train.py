@@ -5,9 +5,9 @@ from flask import current_app
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 
-r = redis.Redis()
-
 def train():
+    r = redis.Redis(host=current_app.config['REDIS_HOST'])
+
     df = pd.read_csv(current_app.config['DATASET_FILE_PATH'])
 
     df['completion_rate'] = df['submissions'] / df['views']

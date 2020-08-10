@@ -3,4 +3,4 @@ WORKDIR /completion-rate
 COPY ./requirements/prod.txt ./requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
-CMD [ "python", "./scripts/app.py"]
+CMD ["uwsgi", "http.ini"]

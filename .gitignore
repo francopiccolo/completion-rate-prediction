@@ -2,8 +2,7 @@
 .idea/*
 *__pycache__/
 venv/
-dump.rdb
 *.ipynb_checkpoints/
 
-data/
 .env
+flask/data/

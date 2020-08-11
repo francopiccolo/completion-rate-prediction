@@ -12,7 +12,7 @@ prediction_model = predict_ns.model('Prediction', {
         'prediction': fields.Float,
 })
 
-response_model = predict_ns.model('Predict', {
+response_model = predict_ns.model('Predict response', {
     'response_type': fields.String,
     'response': fields.Nested(prediction_model, skip_none=True)
 })

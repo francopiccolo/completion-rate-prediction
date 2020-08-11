@@ -39,7 +39,7 @@ def predict(request_json):
 
     request_df = pd.DataFrame(request_json, index=[0])
 
-    response_type = 'Succesful prediction'
+    response_type = 'Successful prediction'
     prediction = model.predict(request_df)[0]
     response = {'prediction': prediction,
                 'model_version': model_version}

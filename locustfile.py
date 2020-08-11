@@ -10,7 +10,7 @@ class Trainer(HttpUser):
 
 with open('./test/data/predict_request.json') as f:
     predict_request_body = json.load(f)
-print('Request body', predict_request_body)
+
 class Predictor(HttpUser):
     weight = 1500*10
     wait_time = between(5, 10)

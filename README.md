@@ -1,9 +1,13 @@
 # completion-rate-prediction
-Build docker image:
+To build docker images:
 ```shell script
-docker build -t completion-rate .
+docker-compose build
 ```
-Run docker container:
+To run docker containers:
 ```shell script
-docker run -p 5000:5000 completion-rate
+docker-compose up
+```
+To run API stress test:
+```shell script
+python locustfile.py
 ```

@@ -26,5 +26,5 @@ def train():
     r.incr('model_version')
     model_version = r.get('model_version')
 
-    return {'response_type': 'Trained succesfully',
+    return {'response_type': 'Trained successfully',
             'response': {'model_version': model_version}}

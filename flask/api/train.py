@@ -11,7 +11,7 @@ train_model = train_ns.model('Train', {
 })
 
 reponse_model = train_ns.model('Train response', {
-    'reponse_type': fields.String,
+    'response_type': fields.String,
     'response': fields.Nested(train_model, skip_none=True)
 })
 

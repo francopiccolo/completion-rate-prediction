@@ -12,19 +12,16 @@ def train():
 
     df['completion_rate'] = df['submissions'] / df['views']
 
-    features = [col for col in df.columns if col.startswith('feat')]
-    X = df[features]
+    X = df[current_app.config['FEATURES']]
     y = df['completion_rate']
 
-    random_forest = RandomForestRegressor(n_estimators=10, max_depth=3)
-    random_forest.fit(X, y)
-
-    pickle.dump(random_forest, open(current_app.config['MODEL_FILE_PATH'], 'wb'))
+    random_forest = RandomForestRegressor(
+                        n_estimators=current_app.config['N_ESTIMATORS'],
+                        max_depth=current_app.config['MAX_DEPTH'])
 
     current_app.logger.info('Training model')
+    random_forest.fit(X, y)
+    current_app.logger.info('Model trained')
 
+    pickle.dump(random_forest, open(current_app.config['MODEL_FILE_PATH'], 'wb'))
     r.incr('model_version')
-    model_version = r.get('model_version')
-
-    return {'response_type': 'Trained successfully',
-            'response': {'model_version': model_version}}

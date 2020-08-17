@@ -8,7 +8,7 @@ class Trainer(HttpUser):
     def train(self):
         self.client.post('train')
 
-with open('./test/data/predict_request.json') as f:
+with open('./test/data/request_prediction.json') as f:
     predict_request_body = json.load(f)
 
 class Predictor(HttpUser):

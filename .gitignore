@@ -1,9 +1,10 @@
 .DS_Store
-.idea/*
-.pytest_cache/
+.idea/
+*.pytest_cache/
 *__pycache__/
 venv/
 *.ipynb_checkpoints/
 
 .env
 flask/data/
+notebooks/00_draft.ipynb

@@ -1,5 +1,8 @@
 import unittest
+from unittest import mock
 import json
+
+import fakeredis
 
 from app import create_app
 
@@ -21,6 +24,8 @@ class TestPredict(unittest.TestCase):
         self.app_context = self.app.app_context()
         self.app_context.push()
         self.client = self.app.test_client()
+        redis_patcher = mock.patch('services.predict.redis.Redis', fakeredis.FakeRedis)
+        self.redis = redis_patcher.start()
 
     def tearDown(self):
         self.app_context.pop()

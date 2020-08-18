@@ -6,3 +6,4 @@ flask-restx
 uwsgi
 redis
 pytest
+fakeredis

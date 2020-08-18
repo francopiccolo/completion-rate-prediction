@@ -5,6 +5,5 @@
 venv/
 *.ipynb_checkpoints/
 
-.env
 flask/data/
 notebooks/00_draft.ipynb

@@ -19,7 +19,7 @@ http://localhost:80
 
 To run API stress test:
 ```shell script
-python locustfile.py
+locust -f locustfile.py
 ```
 Which will enable to go to http://localhost:8089/ to simulate the tests.
 
